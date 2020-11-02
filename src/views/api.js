@@ -5,7 +5,6 @@ function getAssets() {
     .then(promise => promise.json())
     .then(promise => promise.data);
 }
-
 export default {
   getAssets
 };

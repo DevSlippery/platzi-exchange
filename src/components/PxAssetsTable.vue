@@ -18,10 +18,11 @@
         v-for="(a, index) in assets"
         :key="index"
         class="border-b border-gray-200 hover:bg-gray-100 hover:bg-orange-100"
+        
       >
-        <td>
+        <td >
           <img
-            class=" w-6 h-6"
+            class=" w-6 h-6 m-auto"     
             :src="
               `https://static.coincap.io/assets/icons/${a.symbol.toLowerCase()}@2x.png`
             "
@@ -32,8 +33,8 @@
           <b># {{ a.rank }}</b>
         </td>
         <td>{{ a.name }}</td>
-        <td>{{ a.priceUsd }}</td>
-        <td>{{ a.marketCapUsd }}</td>
+        <td>{{ dollarFilter(a.priceUsd) }}</td>
+        <td>{{ dollarFilter(a.marketCapUsd) }}</td>
         <td
           :class="
             a.changePercent24Hr.includes('-')
@@ -41,7 +42,7 @@
               : 'text-green-600'
           "
         >
-          {{ a.changePercent24Hr }}
+          {{ percentFilter(a.changePercent24Hr) }}
         </td>
         <td class="hidden sm:block"></td>
       </tr>
@@ -50,6 +51,7 @@
 </template>
 
 <script>
+import numeral from "numeral";
 export default {
   name: "PxAssetsTable",
 
@@ -58,6 +60,17 @@ export default {
       type: Array,
       default: () => []
     }
+  },
+  methods: {
+    dollarFilter(value) {
+      if (!value) return "$ 0";
+      return numeral(value).format("($ 0.00a)");
+    },
+    percentFilter(value){
+      if(!value)return '0%'
+
+      return `${Number(value).toFixed(2)}%`
+          }
   }
 };
 </script>

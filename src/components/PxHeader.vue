@@ -2,7 +2,7 @@
   <header class="shadow pb-4">
     <nav class="mb-3">
       <div class="mb-1">
-        <nav class="flex items-center justify-between bg-green-400 p-6">
+        <nav class="flex items-center justify-between p-6" style="margin-top: -60px; background: #284aff">
           <div class="flex items-center flex-shrink-0 text-white mr-6">
             <px-icon class="mr-2" />
             <span class="font-semibold text-xl tracking-tight"

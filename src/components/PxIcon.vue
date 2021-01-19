@@ -1,5 +1,6 @@
 <template>
-  <svg
+ <div class="">
+    <svg
     version="1.1"
     id="Layer_1"
     xmlns="http://www.w3.org/2000/svg"
@@ -453,4 +454,5 @@ OS0wOS0yOVQwMDowNToxNiswMzowMFjwT8UAAAAldEVYdGRhdGU6bW9kaWZ5ADIwMTktMDktMjlU
 MDA6MDU6MTYrMDM6MDAprfd5AAAAAElFTkSuQmCC"
     />
   </svg>
+ </div>
 </template>

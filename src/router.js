@@ -2,6 +2,7 @@ import { createWebHistory, createRouter } from "vue-router";
 import Home from "@/views/Home.vue";
 import About from "@/views/About.vue";
 import Error from "@/views/Error.vue";
+import CoinDetail from "@/views/CoinDetail.vue";
 
 const routes = [
   {
@@ -15,7 +16,11 @@ const routes = [
     name: "About",
     component: About
   },
-
+  {
+    path: "/coin/:id",
+    name: "coin-detail",
+    component: CoinDetail
+  },
   {
     path: "/:catchAll(.*)",
     component: Error
